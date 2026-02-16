@@ -26,7 +26,10 @@ const io = setupSocket(server);
 app.set('io', io); // Make io accessible in controllers
 
 // Middleware
-const allowedOrigins = [process.env.CLIENT_URL, 'http://localhost:5173', 'https://bid-clint.vercel.app'].filter(Boolean);
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'http://localhost:5173'
+].filter(Boolean);
 
 app.use(cors({
   origin: (origin, callback) => {
